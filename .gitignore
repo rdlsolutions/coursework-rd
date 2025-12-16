@@ -20,3 +20,27 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+.DS_Store
+Thumbs.db
+# User-specific files
+*.code-workspace    
+*.aluser
+*.appsettings.json
+.env    
+# Local settings file
+settings.json
+# Log files
+*.log
+# Backup files
+*.bak
+# Temporary files
+*.tmp
+# Compiled files
+*.dll
+*.exe
+*.pdb
+# Package files
+*.nupkg
+# Ignore node_modules if using Node.js for any scripts
+node_modules/
+

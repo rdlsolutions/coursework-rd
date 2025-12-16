@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16 
+    restart: always
+    container_name: postgres_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d mydatabase -U myuser"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: myuser
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dbl
+  coursework: 
+    image: coursework:1.0.1 
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080" 
+    environment:
+      DB_HOST: "postgres_db" 
+      DB_PORT: 5432
+      DB_USER: myuser
+      DB_PASSWORD: mysecretpassword
+      DB_NAME: mydatabase
+    networks:
+      - dbl
+
+volumes:
+  pgdata:
+
+networks:
+  dbl:
+    driver: bridge

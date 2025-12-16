@@ -1,0 +1,94 @@
+/* Загальні стилі для шрифтів та фону */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 20px;
+}
+
+#calendar {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #000; /* Чорна рамка навколо всього календаря */
+}
+
+/* Стиль для заголовка (ГРУДЕНЬ 2025) */
+.fc-toolbar-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Стилі кнопок навігації (Prev, Next, Today) */
+.fc-button {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0; /* Прибираємо заокруглення */
+}
+
+.fc-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Заголовки днів тижня (Пн, Вт, Ср...) */
+.fc-col-header-cell {
+    background-color: #fff;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    font-weight: normal; 
+    text-transform: capitalize;
+}
+
+.fc-col-header-cell:last-child {
+    border-right: none;
+}
+
+/* Комірки днів */
+.fc-daygrid-day {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.fc-daygrid-day:last-child {
+    border-right: none;
+}
+
+/* Номери днів */
+.fc-daygrid-day-top {
+    color: #000;
+    padding: 5px;
+    text-align: left; /* Вирівнювання номерів вліво/вгору */
+}
+
+/* Поточний день (сьогодні) */
+.fc-day-today {
+    background-color: #f0f0f0; /* Ледь сірий фон для сьогоднішнього дня */
+}
+
+/* Події в календарі */
+.fc-event {
+    background-color: #000; /* Чорний колір подій */
+    border: 1px solid #000;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 0.8em;
+}
+
+/* Стилі для форми додавання події */
+input, input[type="datetime-local"], button {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #000;
+    border-radius: 0;
+}
+
+button {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
