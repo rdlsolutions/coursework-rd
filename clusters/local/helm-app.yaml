@@ -13,8 +13,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: coursework-rd
-      valuesFrom:
-        - configMapKeyRef:
-            name: coursework-config
       interval: 5m
   releaseName: coursework
