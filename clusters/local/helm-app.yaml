@@ -12,6 +12,6 @@ spec:
       version: 0.1.0
       sourceRef:
         kind: GitRepository
-        name: rdlsolutions/coursework-rd
+        name: flux-system/flux-system
       interval: 5m
   releaseName: coursework
