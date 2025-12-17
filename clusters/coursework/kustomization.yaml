@@ -4,3 +4,10 @@ namespace: coursework-ns
 resources:
   - namespace.yaml
   - postgres.yaml
+configMapGenerator:
+  - name: coursework-config
+    literals:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres-db-rw
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=mydatabase
