@@ -35,7 +35,7 @@
 - ingress.yaml
 
 ```sh
-  flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=./clusters/local  --personal
+  flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=clusters/local
 ```
 
 ### Етап 3. Додаємо БД та оператори
