@@ -21,3 +21,9 @@
 ![alt text](<images/Docker Compose.png>)
 
 ### Етап 2. Helm-chart
+
+#### Flux
+
+```sh
+  flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=./clusters/local  --personal
+```
