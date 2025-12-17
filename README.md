@@ -22,7 +22,7 @@
 
 ### Етап 2. Helm-chart
 
-#### Flux
+#### Flux CD
 
 ```sh
   flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=./clusters/local  --personal
