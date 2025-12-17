@@ -24,6 +24,20 @@
 
 #### Flux CD
 
+Небхідно встановити та налаштувати Helm для застосунку.
+
+`helm create coursework`
+
+Налаштовуємо змінні для:
+
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+
 ```sh
   flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=./clusters/local  --personal
 ```
+
+### Етап 3. Додаємо БД та оператори
+
+Для застосунку необхідна для роботи БД Postgres, створюємо її через flux kustomize, додаючи до кластеру файл postgres.yaml kind: Cluster від postgresql.cnpg.kustomize.config.k8s.io та додаємо оператор БД CloudNativePG. Паралельно додаємо kustomize ресурси для застосунку.

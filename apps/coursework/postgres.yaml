@@ -1,0 +1,8 @@
+apiVersion: postgresql.cnpg.kustomize.config.k8s.io/v1
+kind: Cluster
+metadata:
+  name: coursework-db
+spec:
+  instances: 3 
+  storage:
+    size: 1Gi
