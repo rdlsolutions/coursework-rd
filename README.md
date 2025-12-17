@@ -40,4 +40,6 @@
 
 ### Етап 3. Додаємо БД та оператори
 
-Для застосунку необхідна для роботи БД Postgres, створюємо її через flux kustomize, додаючи до кластеру файл postgres.yaml kind: Cluster від postgresql.cnpg.kustomize.config.k8s.io та додаємо оператор БД CloudNativePG. Паралельно додаємо kustomize ресурси для застосунку.
+Для застосунку необхідна для роботи БД Postgres, створюємо її через flux kustomize, додаючи до кластеру файл postgres.yaml kind: Cluster від postgresql.cnpg.io/v1 та додаємо оператор БД CloudNativePG. Паралельно додаємо kustomize ресурси для застосунку.
+
+![alt text](images/pod-postgres.png)
