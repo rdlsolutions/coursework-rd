@@ -2,6 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: coursework-chart
+  namespace: coursework-ns
 spec:
   dependsOn:
     - name: coursework-ns
