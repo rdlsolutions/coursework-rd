@@ -45,10 +45,16 @@ func initDB() error {
 	dbName := os.Getenv("DB_NAME")
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
-	connStr := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable",
-		dbUser, dbPassword, dbHost, dbPort, dbName)
-// postgresql://app:XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi@coursework-db-rw.coursework-ns.svc.cluster.local:5432/app		
-// jdbc:postgresql://coursework-db-rw.coursework-ns:5432/app?password=XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi&user=app
+
+	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+		dbHost, dbPort, dbUser, dbPassword, dbName)
+	/*
+	   	connStr := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable",
+	   		dbUser, dbPassword, dbHost, dbPort, dbName)
+	   // postgresql://app:XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi@coursework-db-rw.coursework-ns.svc.cluster.local:5432/app
+	   // jdbc:postgresql://coursework-db-rw.coursework-ns:5432/app?password=XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi&user=app
+
+	*/
 	db, err = sql.Open("pgx", connStr)
 	if err != nil {
 		return fmt.Errorf("Помилка читання БД: %w", err)
