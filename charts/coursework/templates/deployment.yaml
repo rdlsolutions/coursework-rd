@@ -8,6 +8,9 @@ spec:
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   template:
+    metadata:
+      labels:
+        app: {{ .Values.nameOverride }}
     spec:
       containers:
         - name: {{ .Values.nameOverride }}
