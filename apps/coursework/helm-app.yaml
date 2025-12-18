@@ -14,7 +14,7 @@ spec:
     createNamespace: true
   chart:
     spec:
-      chart: ./charts/coursework
+      chart: ../charts/coursework
       version: 0.1.0
       sourceRef:
         kind: GitRepository
