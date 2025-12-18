@@ -9,7 +9,7 @@ image:
 
 containerPorts: 8080
 nameOverride: coursework-rd
-fullnameOverride: ""
+fullnameOverride: "coursework-rd-deployment"
 
 environment:
   DB_HOST: "postgres-db-rw" 
