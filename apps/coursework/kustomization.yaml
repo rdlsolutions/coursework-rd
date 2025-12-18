@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - postgres.yaml
+  - helm-app.yaml
 configMapGenerator:
   - name: coursework-config
     literals:
