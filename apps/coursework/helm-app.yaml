@@ -4,8 +4,6 @@ metadata:
   name: coursework-chart
   namespace: coursework-ns
 spec:
-  dependsOn:
-    - name: flux-system
   interval: 15m
   timeout: 5m
   targetNamespace: coursework-ns

@@ -4,6 +4,8 @@ metadata:
   name: coursework
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: flux-system
   interval: 10m0s
   targetNamespace: coursework-ns
   sourceRef:
