@@ -12,7 +12,6 @@ spec:
       version: 0.1.0
       sourceRef:
         kind: GitRepository
-        name: flux-system/flux-system
-        namespace: flux-system
+        name: flux-system
       interval: 5m
   releaseName: coursework
