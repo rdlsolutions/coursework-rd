@@ -6,6 +6,9 @@ metadata:
 spec:
   interval: 15m
   timeout: 5m
+  targetNamespace: coursework
+  install:
+    createNamespace: true
   chart:
     spec:
       chart: ./charts/coursework
