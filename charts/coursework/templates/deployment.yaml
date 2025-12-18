@@ -23,10 +23,6 @@ spec:
           livenessProbe:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{- with .Values.environment }}
-          environment:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}  
           env:
             - name: DB_HOST
               value: {{ .Values.environment.DB_HOST | quote }}
