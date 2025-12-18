@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  targetNamespace: flux-system
+  targetNamespace: coursework-ns
   sourceRef:
     kind: GitRepository
     name: flux-system
