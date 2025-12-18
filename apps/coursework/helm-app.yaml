@@ -5,7 +5,7 @@ metadata:
   namespace: coursework-ns
 spec:
   dependsOn:
-    - name: flux-system
+    - namespace: coursework-ns
   interval: 15m
   timeout: 5m
   targetNamespace: coursework-ns
