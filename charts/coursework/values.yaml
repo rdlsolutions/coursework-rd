@@ -3,7 +3,7 @@ namespace: coursework
 replicaCount: 1
 
 image:
-  repository: rdlsolutions/coursework-rd
+  repository: rdlsolutions/coursework
   pullPolicy: IfNotPresent
   tag: "1.0.1"
 
