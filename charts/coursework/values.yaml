@@ -1,4 +1,4 @@
-namespace: coursework
+namespace: coursework-ns
 
 replicaCount: 1
 

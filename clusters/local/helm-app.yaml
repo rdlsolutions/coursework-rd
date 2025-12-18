@@ -2,14 +2,13 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: coursework-chart
-  namespace: coursework
 spec:
   dependsOn:
-    - name: coursework
+    - name: coursework-ns
     - name: coursework-db 
   interval: 15m
   timeout: 5m
-  targetNamespace: coursework
+  targetNamespace: coursework-ns
   install:
     createNamespace: true
   chart:
