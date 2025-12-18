@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include .Values.fullnameOverride . }}
+  name: {{ .Values.fullnameOverride }}
   namespace: {{ .Values.namespace }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
