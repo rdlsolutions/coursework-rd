@@ -12,6 +12,6 @@ spec:
       version: 0.1.0
       sourceRef:
         kind: GitRepository
-        name: coursework
+        name: coursework-rd
       interval: 5m
   releaseName: coursework
