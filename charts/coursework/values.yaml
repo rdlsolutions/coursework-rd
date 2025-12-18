@@ -12,7 +12,7 @@ nameOverride: coursework-rd
 fullnameOverride: "coursework-rd-deployment"
 
 environment:
-  DB_HOST: "postgres-db-rw" 
+  DB_HOST: "coursework-db-rw" 
   DB_PORT: 5432
   DB_USER: myuser
   DB_PASSWORD: mysecretpassword
