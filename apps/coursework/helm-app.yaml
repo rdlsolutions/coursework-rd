@@ -4,8 +4,6 @@ metadata:
   name: coursework-chart
   namespace: coursework-ns
 spec:
-  dependsOn:
-    - name: coursework-db 
   interval: 15m
   timeout: 5m
   targetNamespace: coursework-ns
