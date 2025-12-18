@@ -38,7 +38,7 @@ ingress:
   className: ""
   name: coursework-ingress
   hosts:
-    - host: coursework.local
+    - host: coursework.staging.local
       paths:
         - path: /
           pathType: Prefix

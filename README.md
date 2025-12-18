@@ -43,3 +43,11 @@
 Для застосунку необхідна для роботи БД Postgres, створюємо її через flux kustomize, додаючи до кластеру файл postgres.yaml kind: Cluster від postgresql.cnpg.io/v1 та додаємо оператор БД CloudNativePG. Паралельно додаємо kustomize ресурси для застосунку.
 
 ![alt text](images/pod-postgres.png)
+
+Звʼязуємо до кучі додаток та кластер Postgres. Не забуваємо в /etc/hosts прописати отчення для Staging та Production
+
+![alt text](images/etc-hosts.png)
+
+![alt text](images/coursework.local.png)
+
+### Етап 4. Конфігурація: Production-ready для БД та додатку
