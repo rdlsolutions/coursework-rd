@@ -12,7 +12,7 @@ spec:
       version: 0.1.0
       sourceRef:
         kind: GitRepository
-        name: flux-system
-        URL: ssh://git@github.com/rdlsolutions/coursework-rd
+        name: flux-system/flux-system
+        namespace: flux-system
       interval: 5m
   releaseName: coursework
