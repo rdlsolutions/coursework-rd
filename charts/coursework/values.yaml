@@ -12,7 +12,7 @@ nameOverride: coursework-rd
 fullnameOverride: "coursework-rd-deployment"
 
 environment:
-  DB_HOST: coursework-db-rw
+  DB_HOST: coursework-db-rw.coursework-ns.svc.cluster.local
   DB_PORT: 5432
   DB_USER: app
   DB_PASSWORD: XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi
