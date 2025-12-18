@@ -14,8 +14,8 @@ fullnameOverride: "coursework-rd-deployment"
 environment:
   DB_HOST: "coursework-db-rw" 
   DB_PORT: 5432
-  DB_USER: myuser
-  DB_PASSWORD: mysecretpassword
+  DB_USER: app
+  DB_PASSWORD: XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi
   DB_NAME: mydatabase
 
 
