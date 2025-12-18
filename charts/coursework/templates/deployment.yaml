@@ -26,7 +26,18 @@ spec:
           {{- with .Values.environment }}
           environment:
             {{- toYaml . | nindent 12 }}
-          {{- end }}          
+          {{- end }}  
+          env:
+            - name: DB_HOST
+              value: {{ .Values.environment.DB_HOST | quote }}
+            - name: DB_PORT
+              value: {{ .Values.environment.DB_PORT | quote }}
+            - name: DB_USER
+              value: {{ .Values.environment.DB_USER | quote }}
+            - name: DB_PASSWORD
+              value: {{ .Values.environment.DB_PASSWORD | quote }}
+            - name: DB_NAME
+              value: {{ .Values.environment.DB_NAME | quote }}        
           {{- with .Values.readinessProbe }}
           readinessProbe:
             {{- toYaml . | nindent 12 }}
