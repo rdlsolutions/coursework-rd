@@ -5,7 +5,6 @@ metadata:
   namespace: coursework-ns
 spec:
   dependsOn:
-    - name: coursework-ns
     - name: coursework-db 
   interval: 15m
   timeout: 5m
