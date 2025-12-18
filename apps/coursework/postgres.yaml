@@ -7,10 +7,4 @@ spec:
   instances: 3 
   storage:
     size: 1Gi
-  bootstrap:
-    initdb: # Развертывание нового кластера.
-      database: mydatabase
-      owner: myuser
-      passwordSecret:
-        name: coursework-db-secret
-        key: password
+
