@@ -8,12 +8,7 @@ spec:
   timeout: 5m
   targetNamespace: coursework-ns
   install:
-    createNamespace: true
-    remediation:
-      retries: -1 # Use -1 for infinite retries      
-  upgrade:
-    remediation:
-      retries: -1 # Use -1 for infinite retries
+    createNamespace: true 
   chart:
     spec:
       chart: ../charts/coursework
