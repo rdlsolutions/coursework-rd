@@ -10,8 +10,8 @@ spec:
   install:
     createNamespace: true
     remediation:
-      retries: -1 # Use -1 for infinite retries
       strategy: uninstall # Uninstall on failed install
+      retries: -1 # Use -1 for infinite retries      
   upgrade:
     remediation:
       strategy: rollback  # Rollback on failed upgrade
