@@ -12,7 +12,6 @@ spec:
   chart:
     spec:
       chart: ../charts/coursework
-      version: 0.1.0
       sourceRef:
         kind: GitRepository
         name: flux-system
