@@ -9,6 +9,11 @@ spec:
   targetNamespace: coursework-ns
   install:
     createNamespace: true
+    remediation:
+      retries: -1 # Use -1 for infinite retries
+  upgrade:
+    remediation:
+      retries: -1 # Use -1 for infinite retries
   chart:
     spec:
       chart: ../charts/coursework
