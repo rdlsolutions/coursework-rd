@@ -11,8 +11,10 @@ spec:
     createNamespace: true
     remediation:
       retries: -1 # Use -1 for infinite retries
+      strategy: uninstall # Uninstall on failed install
   upgrade:
     remediation:
+      strategy: rollback  # Rollback on failed upgrade
       retries: -1 # Use -1 for infinite retries
   chart:
     spec:
