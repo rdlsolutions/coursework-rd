@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: coursework-chart
@@ -10,11 +10,9 @@ spec:
   install:
     createNamespace: true
     remediation:
-      strategy: uninstall # Uninstall on failed install
       retries: -1 # Use -1 for infinite retries      
   upgrade:
     remediation:
-      strategy: rollback  # Rollback on failed upgrade
       retries: -1 # Use -1 for infinite retries
   chart:
     spec:
