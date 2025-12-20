@@ -5,9 +5,6 @@ metadata:
   namespace: coursework-ns
 spec:
   interval: 15m
-  targetNamespace: coursework-ns
-  install:
-    createNamespace: true 
   chart:
     spec:
       chart: ./charts/coursework
