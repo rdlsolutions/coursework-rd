@@ -27,6 +27,8 @@ spec:
             - containerPort: {{ .Values.service.port }}
           dependsOn:
             - coursework-ns  
+            - "{{ .Values.image.repository }}.{{ .Values.image.tag | default .Chart.AppVersion }}"coursework-db-rw.coursework-ns.svc.cluster.local
+            - coursework-db-app.coursework-ns.svc.cluster.local
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}

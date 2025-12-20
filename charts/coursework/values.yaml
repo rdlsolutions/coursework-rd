@@ -15,7 +15,7 @@ environment:
   DB_HOST: coursework-db-rw.coursework-ns.svc.cluster.local
   DB_PORT: 5432
   DB_USER: app
-  DB_PASSWORD: XgDBTEwQD6Hc74hZV6B3HN9zeN7vg1yQteCaWwBxrBsia4zYUoPQZTKli7YzYAfi
+  DB_PASSWORD: dTNdNZURk6QBK7NXkS9bomfE8thbjkWehLYnEXwaRHNWqRSAf0o5358bPiuyq1ZD
   DB_NAME: app
 
 
