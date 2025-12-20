@@ -17,4 +17,4 @@ spec:
         name: flux-system
         namespace: flux-system
       interval: 10m
-  releaseName: coursework-release
+  releaseName: coursework
