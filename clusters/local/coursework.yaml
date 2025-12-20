@@ -13,6 +13,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "./apps/coursework"
+  path: "./apps/base"
   prune: true
   timeout: 1m0s
