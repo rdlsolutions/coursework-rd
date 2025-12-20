@@ -5,16 +5,16 @@ metadata:
   namespace: coursework-ns
 spec:
   interval: 15m
-  timeout: 5m
   targetNamespace: coursework-ns
   install:
     createNamespace: true 
   chart:
     spec:
-      chart: ../charts/coursework
+      chart: ./charts/coursework
+      version: 0.1.0
       sourceRef:
         kind: GitRepository
         name: flux-system
         namespace: flux-system
-      interval: 5m
-  releaseName: coursework
+      interval: 10m
+  releaseName: coursework-release
