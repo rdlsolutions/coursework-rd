@@ -12,6 +12,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "../apps/base/appcharts"
+  path: "./clusters/apps/base/appcharts"
   prune: true
   timeout: 1m0s

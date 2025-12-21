@@ -8,6 +8,6 @@ spec:
     kind: GitRepository
     name: flux-system
   interval: 10m0s
-  path: "../apps/base/namespace"
+  path: "./clusters/apps/base/namespace"
   prune: true
   timeout: 1m0s

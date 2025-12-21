@@ -11,6 +11,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "../apps/base/dbpostgres"
+  path: "./clusters/apps/base/dbpostgres"
   prune: true
   timeout: 1m0s
