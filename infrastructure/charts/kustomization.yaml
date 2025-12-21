@@ -3,4 +3,4 @@ kind: Kustomization
 metadata:
   name: chart-app
 resources:
-  - ../apps/base/helm-app.yaml
+  - helm-app.yaml

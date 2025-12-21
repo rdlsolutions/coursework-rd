@@ -3,4 +3,4 @@ kind: Kustomization
 metadata:
   name: name-ns
 resources:
-  - ../apps/base/namespace.yaml
+  - namespace.yaml

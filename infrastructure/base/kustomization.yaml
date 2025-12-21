@@ -3,7 +3,7 @@ kind: Kustomization
 metadata:
   name: postgres-db
 resources:
-  - ../apps/base/postgres.yaml
+  - postgres.yaml
 configMapGenerator:
   - name: coursework-config
     literals:
