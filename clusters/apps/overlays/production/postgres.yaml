@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: coursework-db
-  namespace: prodactions
+  namespace: prodaction
 spec:
   instances: 3 
   storage:
