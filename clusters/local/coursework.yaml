@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
+    - name: name-ns
     - name: dbpg-operator
   interval: 10m0s
   targetNamespace: coursework-ns

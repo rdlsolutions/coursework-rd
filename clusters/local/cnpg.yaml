@@ -4,10 +4,7 @@ metadata:
   name: cnpg-operator
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: name-ns
   interval: 10m0s
-  targetNamespace: coursework-ns
   sourceRef:
     kind: GitRepository
     name: flux-system
