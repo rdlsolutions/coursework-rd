@@ -8,6 +8,6 @@ spec:
     kind: GitRepository
     name: flux-system
   interval: 10m0s
-  path: "./infrastructure/cnpg"
+  path: "./infrastructure/name-ns"
   prune: true
   timeout: 1m0s
