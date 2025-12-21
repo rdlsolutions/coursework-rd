@@ -1,0 +1,38 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: coursework-db
+  namespace: staging
+spec:
+  instances: 3 
+  storage:
+    size: 1Gi
+
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+      secret:
+        name: coursework-db-app
+
+  enableSuperuserAccess: true
+  superuserSecret:
+    name: coursework-db-superuser
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: coursework-db-app
+type: kubernetes.io/basic-auth
+data:
+  username: YXBw
+  password: ZFROZE5aVVJrNlFCSzdOWGtTOWJvbWZFOHRoYmprV2VoTFluRVh3YVJITldxUlNBZjBvNTM1OGJQaXV5cTFaRA==
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: coursework-db-superuser
+type: kubernetes.io/basic-auth
+data:
+  username: cG9zdGdyZXM=
+  password: ZFROZE5aVVJrNlFCSzdOWGtTOWJvbWZFOHRoYmprV2VoTFluRVh3YVJITldxUlNBZjBvNTM1OGJQaXV5cTFaRA==

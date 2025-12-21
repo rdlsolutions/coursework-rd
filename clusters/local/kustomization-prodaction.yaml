@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: prodaction-chart
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: dbpg-operator
+  interval: 10m0s
+  targetNamespace: prodaction
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: "./clusters/apps/overlays/prodaction"
+  prune: true
+  timeout: 1m0s

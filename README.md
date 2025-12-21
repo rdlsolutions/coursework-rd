@@ -54,15 +54,17 @@
 
 Для створення архітектур prodaction та staging потрібно рознести файли конфігурації проєкту на декілька директорій:
 
+```sh
 ├── apps
-│   ├── base
-│   ├── production
-│   └── staging
+│   ├── base
+│   ├── production
+│   └── staging
 ├── infrastructure
-│   ├── configs
-│   └── controllers
+│   ├── configs
+│   └── controllers
 └── clusters
-    ├── production
-    └── staging
+  ├── production
+  └── staging
+```
 
 ![alt text](images/work-result.png)

@@ -1,57 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - apps/base/
-  - apps/operatorpg
-patches:
-
-  - target:
-      kind: Service   
-    patch: |
-        - op: replace
-          path: /metadata/namespace
-          value: staging
-          
-        - op: replace
-          path: /metadata/labels/app
-          value: course-app-staging
-  - target:
-      kind: Ingress   
-    patch: |
-        - op: replace
-          path: /metadata/namespace
-          value: staging
-
-  - target:
-      kind: Namespace   
-    patch: |
-        - op: replace
-          path: /metadata/name
-          value: staging
-
-  - target:
-      kind: Deployment 
-    patch: |
-        - op: replace
-          path: /spec/template/spec/containers/0/env/1/value
-          value: "Welcome to the staging Environment"
-
-        - op: replace
-          path: /spec/template/spec/containers/0/env/2/value
-          value: dragonfly
-
-        - op: replace
-          path: /spec/template/spec/containers/0/env/3/value
-          value: "dragonfly-app.staging.svc.cluster.local:6379/0"
-
-        - op: replace
-          path: /spec/replicas
-          value: 1
-
-        - op: add
-          path: /metadata/namespace 
-          value:  staging
-
-        - op: add
-          path: /metadata/name
-          value: coursework-rd-staging
+  - namespace.yaml
+  - postgres.yaml
+  - staging-app.yaml

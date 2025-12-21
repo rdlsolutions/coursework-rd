@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.fullnameOverride }}
+  namespace: {{ .Values.namespace }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: {{ .Values.nameOverride }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.nameOverride }}
+    spec:
+      containers:
+        - name: {{ .Values.nameOverride }}
+          {{- with .Values.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          {{- with .Values.livenessProbe }}
+          livenessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          env:
+            - name: DB_HOST
+              value: {{ .Values.environment.DB_HOST | quote }}
+            - name: DB_PORT
+              value: {{ .Values.environment.DB_PORT | quote }}
+            - name: DB_USER
+              value: {{ .Values.environment.DB_USER | quote }}
+            - name: DB_PASSWORD
+              value: {{ .Values.environment.DB_PASSWORD | quote }}
+            - name: DB_NAME
+              value: {{ .Values.environment.DB_NAME | quote }}        
+          {{- with .Values.readinessProbe }}
+          readinessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
