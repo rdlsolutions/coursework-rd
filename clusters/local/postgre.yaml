@@ -1,16 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: coursework
+  name: dbpg-operator
   namespace: flux-system
 spec:
   dependsOn:
-    - name: dbpg-operator
+    - name: name-ns
   interval: 10m0s
   targetNamespace: coursework-ns
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "./infrastructure/charts"
+  path: "./infrastructure/base"
   prune: true
   timeout: 1m0s
