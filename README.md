@@ -52,3 +52,17 @@
 
 ### Етап 4. Конфігурація: Production-ready для БД та додатку
 
+Для створення архітектур prodaction та staging потрібно рознести файли конфігурації проєкту на декілька директорій:
+
+├── apps
+│   ├── base
+│   ├── production
+│   └── staging
+├── infrastructure
+│   ├── configs
+│   └── controllers
+└── clusters
+    ├── production
+    └── staging
+
+![alt text](images/work-result.png)

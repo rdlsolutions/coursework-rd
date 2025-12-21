@@ -54,19 +54,4 @@ patches:
 
         - op: add
           path: /metadata/name
-          value: course-app-staging
-
-  - target:
-      kind: Dragonfly
-    patch: |
-        - op: replace
-          path: /spec/replicas
-          value: 1
-
-        - op: replace
-          path: /metadata/name
-          value: dragonfly-dev
-
-        - op: replace
-          path: /metadata/namespace
-          value: staging
+          value: coursework-rd-staging

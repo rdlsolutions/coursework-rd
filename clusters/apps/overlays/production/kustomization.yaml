@@ -32,26 +32,19 @@ patches:
   - target:
       kind: Deployment 
     patch: |
-        - op: replace
-          path: /spec/template/spec/containers/0/env/1/value
-          value: "Welcome to the production Environment"
 
         - op: replace
-          path: /spec/template/spec/containers/0/env/2/value
-          value: dragonfly
-
-        - op: replace
-          path: /spec/template/spec/containers/0/env/3/value
-          value: "dragonfly-app.production.svc.cluster.local:6379/0"
+          path: /spec/template/spec/containers/0/env/0/value
+          value: "coursework-db-rw.production.svc.cluster.local:6379/0"
 
         - op: replace
           path: /spec/replicas
-          value: 1
+          value: 3
 
-        - op: add
+        - op: replace
           path: /metadata/namespace 
           value:  production
 
-        - op: add
+        - op: replace
           path: /metadata/name
-          value: course-app-production
+          value: coursework-rd-production
