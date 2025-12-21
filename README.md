@@ -68,3 +68,96 @@
 ```
 
 ![alt text](images/work-result.png)
+
+```sh
+bash-3.2$  flux bootstrap github --owner=rdlsolutions  --repository=coursework-rd  --branch=main  --path=clusters/local
+► connecting to github.com
+► cloning branch "main" from Git repository "https://github.com/rdlsolutions/coursework-rd.git"
+✔ cloned repository
+► generating component manifests
+✔ generated component manifests
+✔ component manifests are up to date
+► installing components in "flux-system" namespace
+✔ installed components
+✔ reconciled components
+► determining if source secret "flux-system/flux-system" exists
+► generating source secret
+✔ public key: ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBIba5m8yw/bEHmjoG8YQGZJA+IdNRzIO/WqfmR3AfPsFKlvWaR30d/rXcMbnTRQRNIzhjBD6KTsBIYalVBoMgm+z8xSzZxVPyjPqiKjYZYUofk4rnCwp3bJTkr01H8JkLw==
+✔ configured deploy key "flux-system-main-flux-system-./clusters/local" for "https://github.com/rdlsolutions/coursework-rd"
+► applying source secret "flux-system/flux-system"
+✔ reconciled source secret
+► generating sync manifests
+✔ generated sync manifests
+✔ sync manifests are up to date
+► applying sync manifests
+✔ reconciled sync configuration
+◎ waiting for GitRepository "flux-system/flux-system" to be reconciled
+✔ GitRepository reconciled successfully
+◎ waiting for Kustomization "flux-system/flux-system" to be reconciled
+✔ Kustomization reconciled successfully
+► confirming components are healthy
+✔ helm-controller: deployment ready
+✔ kustomize-controller: deployment ready
+✔ notification-controller: deployment ready
+✔ source-controller: deployment ready
+✔ all components are healthy
+
+```
+
+![alt text](images/workloads.png)
+
+Різниця між staging та prodaction
+
+```sh
+bash-3.2$ kubectl get all -n prodaction
+NAME                                            READY   STATUS    RESTARTS      AGE
+pod/coursework-db-1                             1/1     Running   0             45m
+pod/coursework-db-2                             1/1     Running   0             45m
+pod/coursework-db-3                             1/1     Running   0             44m
+pod/coursework-rd-deployment-7c5c557886-ft27p   1/1     Running   5 (45m ago)   47m
+pod/coursework-rd-deployment-7c5c557886-zjq86   1/1     Running   5 (45m ago)   46m
+
+NAME                       TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/coursework-db-r    ClusterIP   10.43.21.51    <none>        5432/TCP   47m
+service/coursework-db-ro   ClusterIP   10.43.34.79    <none>        5432/TCP   47m
+service/coursework-db-rw   ClusterIP   10.43.56.164   <none>        5432/TCP   47m
+service/coursework-svc     ClusterIP   10.43.223.65   <none>        8080/TCP   47m
+
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coursework-rd-deployment   2/2     2            2           47m
+
+NAME                                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/coursework-rd-deployment-7c5c557886   2         2         2       47m
+
+NAME                                                 REFERENCE                             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/coursework-hpa   Deployment/coursework-rd-deployment   cpu: 0%/80%   2         5         2          47m
+-----------------------------------------------------------------------------------
+bash-3.2$ kubectl get all -n staging
+NAME                                            READY   STATUS    RESTARTS      AGE
+pod/coursework-db-1                             1/1     Running   0             45m
+pod/coursework-db-2                             1/1     Running   0             45m
+pod/coursework-db-3                             1/1     Running   0             44m
+pod/coursework-rd-deployment-5fbd8774d4-jzpxq   1/1     Running   5 (45m ago)   47m
+
+NAME                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/coursework-db-r    ClusterIP   10.43.102.103   <none>        5432/TCP   47m
+service/coursework-db-ro   ClusterIP   10.43.22.178    <none>        5432/TCP   47m
+service/coursework-db-rw   ClusterIP   10.43.220.248   <none>        5432/TCP   47m
+service/coursework-svc     ClusterIP   10.43.13.34     <none>        8080/TCP   47m
+
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coursework-rd-deployment   1/1     1            1           47m
+
+NAME                                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/coursework-rd-deployment-5fbd8774d4   1         1         1       47m
+bash-3.2$ 
+
+```
+
+### Staging
+
+![alt text](images/app-staging.png)
+
+### Prodaction
+
+![alt text](images/app-prodaction.png)
