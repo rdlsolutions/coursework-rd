@@ -4,8 +4,6 @@ metadata:
   name: prodaction-chart
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: dbpg-operator
   interval: 10m0s
   targetNamespace: prodaction
   sourceRef:

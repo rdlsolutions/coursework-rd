@@ -4,4 +4,4 @@ resources:
   - namespace.yaml
   - postgres.yaml
   - prodaction-app.yaml
-    - HPA.yaml  
+  - HPA.yaml  
