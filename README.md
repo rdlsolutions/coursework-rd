@@ -48,8 +48,6 @@
 
 ![alt text](images/etc-hosts.png)
 
-![alt text](images/coursework.local.png)
-
 ### Етап 4. Конфігурація: Production-ready для БД та додатку
 
 Для створення архітектур prodaction та staging потрібно рознести файли конфігурації проєкту на декілька директорій:
@@ -161,3 +159,13 @@ bash-3.2$
 ### Prodaction
 
 ![alt text](images/app-prodaction.png)
+
+
+### Final action
+
+Скріншоти команд, що підтверджують роботу:
+kubectl get helmreleases -A
+kubectl get pods -A (має бути видно поди в обох неймспейсах).
+kubectl get ingress -A
+
+![alt text](kubectl-get.png)

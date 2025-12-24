@@ -12,7 +12,7 @@ nameOverride: coursework-rd
 fullnameOverride: "coursework-rd-deployment"
 
 environment:
-#  DB_HOST: coursework-db-rw.prodaction.svc.cluster.local
+#  DB_HOST: coursework-db-rw.staging.svc.cluster.local
   DB_HOST: cnpg-webhook-service
 #  DB_PORT: 5432
   DB_PORT: 443
