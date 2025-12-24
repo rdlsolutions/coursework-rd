@@ -8,7 +8,7 @@ spec:
   storage:
     size: 1Gi
   dependsOn:
-    - name: cnpg-operator
+    - name: cnpg
       namespace: production
   bootstrap:
     initdb:
