@@ -9,7 +9,7 @@ spec:
     size: 1Gi
   dependsOn:
     - name: cnpg-operator
-      namespace: flux-system
+      namespace: production
   bootstrap:
     initdb:
       database: app
