@@ -9,7 +9,8 @@ spec:
     size: 1Gi
   dependsOn:
     - name: cnpg
-    - namespace: staging
+      namespace: flux-system
+    - name: staging
   bootstrap:
     initdb:
       database: app
