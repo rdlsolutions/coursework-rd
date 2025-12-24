@@ -5,6 +5,9 @@ metadata:
   namespace: staging
 spec:
   interval: 15m
+  dependsOn:
+    - name: coursework-db
+      namespace: staging
   chart:
     spec:
       chart: ./charts/staging

@@ -7,7 +7,9 @@ spec:
   instances: 3 
   storage:
     size: 1Gi
-
+  dependsOn:
+    - name: cnpg-operator
+      namespace: flux-system
   bootstrap:
     initdb:
       database: app
