@@ -6,6 +6,8 @@ metadata:
 spec:
   interval: 10m0s
   targetNamespace: production
+  dependsOn:
+    - name: cnpg-operator
   sourceRef:
     kind: GitRepository
     name: flux-system
