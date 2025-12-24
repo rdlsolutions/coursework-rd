@@ -7,10 +7,6 @@ spec:
   instances: 3 
   storage:
     size: 1Gi
-  dependsOn:
-    - name: cnpg
-      namespace: flux-system
-    - name: production
   bootstrap:
     initdb:
       database: app
