@@ -50,7 +50,7 @@
 
 ### Етап 4. Конфігурація: Production-ready для БД та додатку
 
-Для створення архітектур prodaction та staging потрібно рознести файли конфігурації проєкту на декілька директорій:
+Для створення архітектур production та staging потрібно рознести файли конфігурації проєкту на декілька директорій:
 
 ```sh
 ├── apps
@@ -104,10 +104,10 @@ bash-3.2$  flux bootstrap github --owner=rdlsolutions  --repository=coursework-r
 
 ![alt text](images/workloads.png)
 
-Різниця між staging та prodaction
+Різниця між staging та production
 
 ```sh
-bash-3.2$ kubectl get all -n prodaction
+bash-3.2$ kubectl get all -n production
 NAME                                            READY   STATUS    RESTARTS      AGE
 pod/coursework-db-1                             1/1     Running   0             45m
 pod/coursework-db-2                             1/1     Running   0             45m
@@ -156,7 +156,7 @@ bash-3.2$
 
 ![alt text](images/app-staging.png)
 
-### Prodaction
+### Prodution
 
 ![alt text](images/app-prodaction.png)
 
