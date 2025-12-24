@@ -6,8 +6,6 @@ metadata:
 spec:
   interval: 10m0s
   targetNamespace: production
-  dependencies:
-    - name: cnpg
   sourceRef:
     kind: GitRepository
     name: flux-system
